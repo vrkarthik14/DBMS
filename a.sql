@@ -122,6 +122,26 @@ END ;
 /
 EXECUTE findFactorial;
 SHOW ERROR PROCEDURE findFactorial;
+       
+#or
+declare 
+t number;
+fact1 number;
+procedure kkr(n in number, fact out number) is
+i number;
+BEGIN
+                      fact:=1;
+                      for i in 1..n
+                       loop
+                        fact:=fact*i;
+                      end loop;
+                     END;
+begin
+t:=&t;
+kkr(t,fact1)
+dbms_output.putline('answer is'||fact1);
+end;
+/
 
 #7
 DECLARE
